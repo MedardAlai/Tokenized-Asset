@@ -1,6 +1,6 @@
 # Tokenized Asset
 
-Solidity contracts for `GOLD-C`, an ERC20 token intended to represent claims against allocated gold held off-chain.
+Solidity contracts for `GOLD CHAIN` (`GLDC`), an ERC20 token intended to represent claims against allocated gold held off-chain.
 
 ## Contracts
 

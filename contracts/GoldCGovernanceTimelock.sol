@@ -4,7 +4,7 @@ pragma solidity ^0.8.24;
 import {TimelockController} from "@openzeppelin/contracts/governance/TimelockController.sol";
 
 /**
- * @title GOLD-C Governance Timelock
+ * @title GOLD CHAIN Governance Timelock
  * @dev Use this timelock as the owner and DEFAULT_ADMIN_ROLE holder for GoldCToken.
  *
  * Recommended production setup:

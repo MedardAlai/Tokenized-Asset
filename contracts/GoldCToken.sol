@@ -10,7 +10,7 @@ import {ERC20Pausable} from "@openzeppelin/contracts/token/ERC20/extensions/ERC2
 import {ERC20Permit} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
 
 /**
- * @title GOLD-C
+ * @title GOLD CHAIN
  * @dev ERC20 token representing claims against allocated gold held off-chain.
  *
  * Deploy production ownership and role admin behind a TimelockController whose
@@ -26,7 +26,7 @@ contract GoldCToken is ERC20, ERC20Burnable, ERC20Pausable, ERC20Permit, AccessC
     event Burned(address indexed from, uint256 value, string reference);
     event ReserveReportPublished(bytes32 indexed reportHash, string uri);
 
-    constructor(address governanceAdmin) ERC20("Gold-C", "GOLD-C") ERC20Permit("Gold-C") Ownable(governanceAdmin) {
+    constructor(address governanceAdmin) ERC20("GOLD CHAIN", "GLDC") ERC20Permit("GOLD CHAIN") Ownable(governanceAdmin) {
         require(governanceAdmin != address(0), "Invalid governance admin");
 
         _grantRole(DEFAULT_ADMIN_ROLE, governanceAdmin);
@@ -36,7 +36,7 @@ contract GoldCToken is ERC20, ERC20Burnable, ERC20Pausable, ERC20Permit, AccessC
     }
 
     /**
-     * @dev Mints GOLD-C after verified gold has been deposited with the issuer/custodian.
+     * @dev Mints GLDC after verified gold has been deposited with the issuer/custodian.
      * @param to Receiver of the newly issued tokens.
      * @param value Token amount, using 18 decimals.
      * @param reference Off-chain custody/deposit reference.

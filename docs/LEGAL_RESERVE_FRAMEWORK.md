@@ -5,7 +5,8 @@ This document is a template and not legal advice. Counsel should replace it with
 ## Reserve Asset
 
 - Asset: allocated physical gold.
-- Token symbol: `GOLD-C`.
+- Token name: `GOLD CHAIN`.
+- Token symbol: `GLDC`.
 - Token standard: ERC20.
 - Redemption unit and ratio: to be defined by issuer documents.
 - Accepted gold forms, bars, refiners, vault locations, and chain-of-custody standards: to be defined.
