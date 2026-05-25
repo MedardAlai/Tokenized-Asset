@@ -53,8 +53,10 @@ This document is a template and not legal advice. Counsel should replace it with
 ## Risk Disclosures
 
 - Smart-contract risk:
+- Governance risk, including multisig, timelock, and role-administration control:
 - Custody risk:
 - Counterparty risk:
 - Liquidity risk:
 - Regulatory risk:
 - Redemption suspension conditions:
+- Upgradeability risk, if proxy upgrades are introduced later:

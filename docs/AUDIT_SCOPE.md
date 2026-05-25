@@ -20,6 +20,8 @@
 - Is `governanceAdmin` a multisig-controlled timelock rather than a personal wallet?
 - Can deployer privileges be safely revoked after setup?
 - Are reserve-report events sufficient for off-chain audit publication?
+- Is EIP-2612 permit behavior compatible with the intended wallet and custody flows?
+- If upgradeability is introduced later, are proxy admin powers, upgrade delays, and implementation changes publicly documented?
 
 ## Out of Scope Unless Audited Separately
 

@@ -7,6 +7,7 @@ import {Ownable2Step} from "@openzeppelin/contracts/access/Ownable2Step.sol";
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {ERC20Burnable} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import {ERC20Pausable} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Pausable.sol";
+import {ERC20Permit} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
 
 /**
  * @title GOLD-C
@@ -16,7 +17,7 @@ import {ERC20Pausable} from "@openzeppelin/contracts/token/ERC20/extensions/ERC2
  * proposer is a multisig. This contract only covers on-chain token mechanics;
  * custody, audits, redemption rights, and compliance remain off-chain controls.
  */
-contract GoldCToken is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, Ownable2Step {
+contract GoldCToken is ERC20, ERC20Burnable, ERC20Pausable, ERC20Permit, AccessControl, Ownable2Step {
     bytes32 public constant CUSTODIAN_ROLE = keccak256("CUSTODIAN_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant RESERVE_REPORTER_ROLE = keccak256("RESERVE_REPORTER_ROLE");
@@ -25,7 +26,7 @@ contract GoldCToken is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, Ownab
     event Burned(address indexed from, uint256 value, string reference);
     event ReserveReportPublished(bytes32 indexed reportHash, string uri);
 
-    constructor(address governanceAdmin) ERC20("Gold-C", "GOLD-C") Ownable(governanceAdmin) {
+    constructor(address governanceAdmin) ERC20("Gold-C", "GOLD-C") ERC20Permit("Gold-C") Ownable(governanceAdmin) {
         require(governanceAdmin != address(0), "Invalid governance admin");
 
         _grantRole(DEFAULT_ADMIN_ROLE, governanceAdmin);
