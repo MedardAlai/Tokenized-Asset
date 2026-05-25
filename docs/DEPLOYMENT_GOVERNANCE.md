@@ -8,7 +8,7 @@
    - `proposers`: the multisig address.
    - `executors`: the multisig, an operations executor, or `address(0)` for open execution.
    - `admin`: a temporary deployer used only during setup.
-3. Deploy `GoldCToken` with `initialOwner` set to the timelock address.
+3. Deploy `GoldCToken` with `governanceAdmin` set to the timelock address. Do not use a personal wallet for this parameter in production.
 4. Grant `DEFAULT_ADMIN_ROLE`, `CUSTODIAN_ROLE`, `PAUSER_ROLE`, and `RESERVE_REPORTER_ROLE` as required through the timelock.
 5. Revoke temporary deployer roles and renounce temporary timelock admin powers after verification.
 

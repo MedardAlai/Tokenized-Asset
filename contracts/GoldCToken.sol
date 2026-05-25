@@ -25,13 +25,13 @@ contract GoldCToken is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, Ownab
     event Burned(address indexed from, uint256 value, string reference);
     event ReserveReportPublished(bytes32 indexed reportHash, string uri);
 
-    constructor(address initialOwner) ERC20("Gold-C", "GOLD-C") Ownable(initialOwner) {
-        require(initialOwner != address(0), "Invalid owner");
+    constructor(address governanceAdmin) ERC20("Gold-C", "GOLD-C") Ownable(governanceAdmin) {
+        require(governanceAdmin != address(0), "Invalid governance admin");
 
-        _grantRole(DEFAULT_ADMIN_ROLE, initialOwner);
-        _grantRole(CUSTODIAN_ROLE, initialOwner);
-        _grantRole(PAUSER_ROLE, initialOwner);
-        _grantRole(RESERVE_REPORTER_ROLE, initialOwner);
+        _grantRole(DEFAULT_ADMIN_ROLE, governanceAdmin);
+        _grantRole(CUSTODIAN_ROLE, governanceAdmin);
+        _grantRole(PAUSER_ROLE, governanceAdmin);
+        _grantRole(RESERVE_REPORTER_ROLE, governanceAdmin);
     }
 
     /**
@@ -46,6 +46,8 @@ contract GoldCToken is ERC20, ERC20Burnable, ERC20Pausable, AccessControl, Ownab
         whenNotPaused
         returns (bool)
     {
+        require(to != address(0), "Cannot mint to zero address");
+
         _mint(to, value);
 
         emit Minted(msg.sender, to, value, reference);

@@ -17,6 +17,7 @@
 - Can custodians burn only with holder allowance and while unpaused?
 - Does pausing prevent transfers, minting, and burning?
 - Can role administration be fully transferred to the timelock?
+- Is `governanceAdmin` a multisig-controlled timelock rather than a personal wallet?
 - Can deployer privileges be safely revoked after setup?
 - Are reserve-report events sufficient for off-chain audit publication?
 
