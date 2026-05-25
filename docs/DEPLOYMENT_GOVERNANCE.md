@@ -12,6 +12,18 @@
 4. Grant `DEFAULT_ADMIN_ROLE`, `CUSTODIAN_ROLE`, `PAUSER_ROLE`, and `RESERVE_REPORTER_ROLE` as required through the timelock.
 5. Revoke temporary deployer roles and renounce temporary timelock admin powers after verification.
 
+## Hardhat Deployment
+
+The governed deployment script requires a multisig address and uses the deployed timelock as the token `governanceAdmin`.
+
+```sh
+MULTISIG_ADDRESS=0xYourMultisigAddress \
+TIMELOCK_MIN_DELAY_SECONDS=172800 \
+npm run deploy:governed -- --network sepolia
+```
+
+`TIMELOCK_MIN_DELAY_SECONDS` defaults to 172800 seconds, or 48 hours.
+
 ## Governance Requirements
 
 - The token owner should be the timelock, not an individual wallet.

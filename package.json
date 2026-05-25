@@ -5,6 +5,7 @@
   "description": "GOLD-C tokenized gold/RWA smart contracts.",
   "scripts": {
     "compile": "hardhat compile",
+    "deploy:governed": "hardhat run scripts/deploy-governed.js",
     "test": "hardhat test"
   },
   "devDependencies": {
