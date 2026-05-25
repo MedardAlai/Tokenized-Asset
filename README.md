@@ -5,7 +5,6 @@ Solidity contracts for `GOLD-C`, an ERC20-style token intended to represent clai
 ## Contracts
 
 - `contracts/GoldCToken.sol` - gold-backed token skeleton using Solidity `^0.8.24`, with custodian minting, approval-gated custodian burning, pause controls, delayed custodian changes, two-step ownership transfer, safer allowance helpers, and reserve report events.
-- `contracts/zeppelin/*.sol` - legacy proxy contracts compatible with Solidity `0.4.24`.
 
 ## Notes
 
